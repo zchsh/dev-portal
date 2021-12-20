@@ -1,0 +1,47 @@
+---
+componentName: 'Tooltip'
+---
+
+**🚧 WORK IN PROGRESS 🚧**
+
+This is a rough cut at a basic Tooltip component. This implementation is largely duplicative of the tooltip partial in [`@hashicorp/react-tabs`](https://github.com/hashicorp/react-components/tree/main/packages/tabs/partials/tooltip).
+
+## Examples
+
+<Tooltip label="Hi there! I'm a tooltip, and this is some long text, which should wrap nicely based on some collision calculations we're doing behind the scenes.">
+  <div
+    style={{
+      display: 'inline-block',
+      border: '1px solid var(--blue-vibrant)',
+      padding: '0.25rem 0.5rem',
+      borderRadius: '4px',
+    }}
+  >
+    I'm a React node with a tooltip.
+  </div>
+</Tooltip>
+
+<br />
+<br />
+
+<Tooltip
+  themeBackground="var(--blue-vibrant)"
+  forceVisible
+  label={
+    <div
+      style={{
+        display: 'inline-block',
+        border: '1px solid var(--blue-vibrant)',
+        padding: '0.25rem 0.5rem',
+        borderRadius: '4px',
+      }}
+    >
+      Hi there! This is a React node rendered within a tooltip.
+    </div>
+  }
+>
+  <span style={{ position: 'relative' }}>
+    This tooltip wraps a text node, and renders a React node as the tooltip
+    contents.
+  </span>
+</Tooltip>
