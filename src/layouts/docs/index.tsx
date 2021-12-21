@@ -2,6 +2,7 @@ import NavigationHeader from 'components/navigation-header'
 import Sidebar, { MenuItem } from 'components/sidebar'
 import Sidecar from 'components/sidecar'
 import { SidecarHeading } from 'components/sidecar/types'
+import BaseNewLayout from 'layouts/base-new'
 import s from './docs-layout.module.css'
 
 interface DocsLayoutProps {
@@ -11,8 +12,8 @@ interface DocsLayoutProps {
 }
 
 const DocsLayout: React.FC<DocsLayoutProps> = (props) => (
-  <div className={s.container}>
-    <NavigationHeader />
+  <BaseNewLayout>
+    {/* <div className={s.container}> */}
     <div className={s.body}>
       <Sidebar menuItems={props.navData} />
       <div className={s.contentWrapper}>
@@ -26,7 +27,8 @@ const DocsLayout: React.FC<DocsLayoutProps> = (props) => (
         </div>
       </div>
     </div>
-  </div>
+    {/* </div> */}
+  </BaseNewLayout>
 )
 
 export default DocsLayout
