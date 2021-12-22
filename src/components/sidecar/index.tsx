@@ -14,7 +14,7 @@ const Sidecar: React.FC<SidecarProps> = ({ headings }) => {
   const { isDesktop } = useDeviceSize()
   const activeSection = useActiveSection(headings, isDesktop)
 
-  const renderListItem = ({ level, slug, title }, idx) => {
+  const renderListItem = ({ level, slug, title }) => {
     if (level > 2) {
       return null
     }
@@ -27,9 +27,7 @@ const Sidecar: React.FC<SidecarProps> = ({ headings }) => {
     return (
       <li className={className} key={slug}>
         <a className={s.sidecarListItemAnchor} href={`#${slug}`}>
-          {idx == headings.length - 1
-            ? title + ' additional infrastructure'
-            : title}
+          {title}
         </a>
         {isActive && <span aria-hidden className={s.activeIndicator} />}
       </li>
