@@ -6,6 +6,7 @@ import productData from 'data/vault.json'
 import { isVersionedDocsEnabled } from 'lib/env-checks'
 // Imports below are used in getStatic functions only
 import { getStaticGenerationFunctions } from 'lib/_proxied-dot-io/get-static-generation-functions'
+import { GetStaticPathsContext, GetStaticPathsResult } from 'next'
 
 const product = { name: productData.name, slug: productData.slug }
 const basePath = 'docs'
@@ -29,7 +30,10 @@ function DocsView(props) {
   )
 }
 
-const { getStaticPaths, getStaticProps } = getStaticGenerationFunctions(
+const {
+  getStaticPaths: generatedGetStaticPaths,
+  getStaticProps,
+} = getStaticGenerationFunctions(
   enableVersionedDocs
     ? {
         strategy: 'remote',
@@ -46,8 +50,28 @@ const { getStaticPaths, getStaticProps } = getStaticGenerationFunctions(
       }
 )
 
-// Export getStatic functions
-export { getStaticPaths, getStaticProps }
+// Export getStaticPaths function
+/**
+ * Note that we need to exclude the usually-included `/` empty path,
+ * as otherwise, we'll have conflicting paths with our `/docs/index.tsx` file.
+ */
+export async function getStaticPaths(
+  context: GetStaticPathsContext
+): Promise<GetStaticPathsResult> {
+  const { paths, ...restReturn } = await generatedGetStaticPaths(context)
+  const paramId = 'page'
+  const pathsWithoutIndex = paths.filter((pathEntry) => {
+    if (typeof pathEntry == 'string') {
+      return pathEntry !== ''
+    }
+    const isIndexPath = pathEntry.params[paramId].length == 0
+    return !isIndexPath
+  })
+  return { ...restReturn, paths: pathsWithoutIndex }
+}
+// Export getStaticProps function
+export { getStaticProps }
+
 // Export view with layout
 DocsView.layout = VaultIoLayout
 export default DocsView
