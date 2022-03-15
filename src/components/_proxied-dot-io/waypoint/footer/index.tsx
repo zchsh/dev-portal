@@ -1,5 +1,5 @@
 import Button from '@hashicorp/react-button'
-import Card, { CardProps } from 'components/card'
+import Card, { CardProps } from 'components/_proxied-dot-io/waypoint/card'
 import Link from 'next/link'
 import InlineSvg from '@hashicorp/react-inline-svg'
 import useWaypointServiceStatus from 'lib/hooks/useWaypointServiceStatus'
