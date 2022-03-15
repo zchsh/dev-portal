@@ -1,3 +1,4 @@
+import { ReactElement } from 'react'
 import s from './style.module.css'
 
 export interface CardProps {
@@ -14,7 +15,7 @@ export default function Card({
   eyebrow,
   title,
   description,
-}: CardProps) {
+}: CardProps): ReactElement {
   return (
     <article className={s.card}>
       <a className={s.link} href={link}>

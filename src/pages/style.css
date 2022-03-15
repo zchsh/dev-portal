@@ -10,6 +10,9 @@
 @import '~@hashicorp/design-system-tokens/devdot/css/helpers/elevation.css';
 @import '~@hashicorp/design-system-tokens/devdot/css/helpers/typography.css';
 
+/* Sizing styles, used in DevDot */
+@import 'styles/sizing.css';
+
 /* Proxied Boundary page styles */
 @import './_proxied-dot-io/boundary/home/style.css';
 @import '../components/_proxied-dot-io/boundary/footer/style.css';
