@@ -1,5 +1,7 @@
 import { ReactElement } from 'react'
 import VaultIoLayout from 'layouts/_proxied-dot-io/vault'
+import Card from 'components/card'
+import CardLink from 'components/card-link'
 import { DocsPageInner, DocsPageProps } from '@hashicorp/react-docs-page'
 import productData from 'data/vault.json'
 import { isVersionedDocsEnabled } from 'lib/env-checks'
@@ -56,17 +58,52 @@ function VaultDocsLandingPage({
         concepts of Vault, what problems it can solve, and contains a quick
         start for using Vault.
       </p>
-      <pre>
-        <code>[ FEATURE CARD PLACEHOLDER ]</code>
-      </pre>
+      <Card>
+        <pre>
+          <code>{`Get Started
+Use Vault to securely store, access, and manage secrets and other sensitive data.
+<button> CLI quick start </button> <button>Developer quick start</button>
+`}</code>
+        </pre>
+      </Card>
       <DocsPageInnerCompatHeading level={2} title="Use Cases" />
-      <pre>
-        <code>[ MULTI-LINK CARDS GRID PLACEHOLDER ]</code>
-      </pre>
+      <Card>
+        <pre>
+          <code>{`Secrets Management
+Centrally store, access, and deploy secrets across applications, systems, and infrastructure.
+Key/Value, Database Credentials, Kubernetes Secrets
+`}</code>
+        </pre>
+      </Card>
+      <Card>
+        <pre>
+          <code>{`Encryption Services
+Securely handle data such as social security numbers, credit card numbers, and other types of compliance-regulated information.
+Transit, Transform, Tokenization
+`}</code>
+        </pre>
+      </Card>
+      <Card>
+        <pre>
+          <code>{`Key Management
+Use a standardized workflow for distribution and lifecycle management of cryptographic keys in various KMS providers.
+PKI, KMIP, KMSE
+`}</code>
+        </pre>
+      </Card>
       <DocsPageInnerCompatHeading level={2} title="Developers" />
-      <pre>
-        <code>[ INTERACT-ABLE CARDS GRID PLACEHOLDER ]</code>
-      </pre>
+      <CardLink href="https://www.vaultproject.io/api-docs/libraries">
+        Client Libraries
+      </CardLink>
+      <CardLink href="https://www.vaultproject.io/api-docs/index">
+        API Reference
+      </CardLink>
+      <CardLink href="https://github.com/hashicorp/hello-vault-go">
+        Sample Integrations
+      </CardLink>
+      <CardLink href="https://github.com/hashicorp/vault-examples">
+        GitHub Samples
+      </CardLink>
     </DocsPageInner>
   )
 }
