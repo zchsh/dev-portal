@@ -1,5 +1,4 @@
 import React from 'react'
-import InlineSvg from '@hashicorp/react-inline-svg'
 import classNames from 'classnames'
 import iconDict from './icon-dict'
 import tagIconDict from './tag-icon-dict'
