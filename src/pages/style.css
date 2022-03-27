@@ -11,7 +11,7 @@
 @import '~@hashicorp/design-system-tokens/dist/devdot/css/helpers/typography.css';
 
 /* Sizing styles, used in DevDot */
-@import 'styles/sizing.css';
+@import '../styles/sizing.css';
 
 /* Proxied Boundary page styles */
 @import './_proxied-dot-io/boundary/home/style.css';

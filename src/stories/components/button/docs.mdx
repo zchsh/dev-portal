@@ -1,0 +1,169 @@
+import {
+  Title,
+  Subtitle,
+  Description,
+  Primary,
+  ArgsTable,
+  Stories,
+  Story,
+  PRIMARY_STORY,
+} from '@storybook/addon-docs'
+import { Button } from '../../../components/button'
+import LiveComponent from '../../../__swingset-components/live-component'
+
+# Button
+
+The `Button` component should be used when [an HTML `<button>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) is needed in a style according to the design system.
+
+> 🚨 This component does not render [an HTML `<a>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a). See related [`InlineLink`](/swingset/components/inlinelink) or [`StandaloneLink`](/swingset/components/standalonelink) for components that render `<a>` elements.
+
+## Props
+
+🚨 Guidance on icon sizes to pass into the `icon` prop:
+
+- If `size` is being set to "small" or "medium", then size 16 icons are recommended.
+- If `size` is being set to "large", then size 24 icons are recommended.
+
+<ArgsTable />
+
+## Colors
+
+<Story id="components-button--colors" />
+
+## Disabled
+
+<Story id="components-button--disabled" />
+
+## Icon and text
+
+<LiveComponent>{`
+<>
+  <Button
+    icon={<SwingsetTestIcon name="plus" />}
+    iconPosition="leading"
+    size="small"
+    text="Small"
+  />
+  <br />
+  <Button
+    icon={<SwingsetTestIcon name="plus" />}
+    iconPosition="trailing"
+    size="small"
+    text="Small"
+  />
+  <br />
+  <Button
+    icon={<SwingsetTestIcon name="plus" />}
+    iconPosition="leading"
+    size="medium"
+    text="Medium"
+  />
+  <br />
+  <Button
+    icon={<SwingsetTestIcon name="plus" />}
+    iconPosition="trailing"
+    size="medium"
+    text="Medium"
+  />
+  <br />
+  <Button
+    icon={<SwingsetTestIcon name="plus" size={24} />}
+    iconPosition="leading"
+    size="large"
+    text="Large"
+  />
+  <br />
+  <Button
+    icon={<SwingsetTestIcon name="plus" size={24} />}
+    iconPosition="trailing"
+    size="large"
+    text="Large"
+  />
+</>
+`}</LiveComponent>
+
+## Icon only
+
+If the `icon` prop is provided and no prop `text` is provided, the component will throw an error if there is no accessible label given.
+
+🚨 Guidance on accessible labels:
+
+- `ariaLabel` and `ariaLabelledBy` cannot both be provided.
+- `ariaDescribedBy` can be provided in addition to `ariaLabel` or `ariaLabelledBy`.
+- A button's label should concisely express what will happen when the button is clicked. Examples:
+  - "Copy to clipboard"
+  - "Add to cart"
+  - "Undo changes"
+
+<LiveComponent>{`
+<>
+  <p>With <code>ariaLabel</code>, a screen reader should say "Copy, button" in this example.</p>
+  <Button
+    ariaLabel="Copy"
+    icon={<SwingsetTestIcon name="copy" />}
+    size="small"
+  />
+  <br />
+  <p>With <code>ariaLabelledBy</code>, a screen reader should say "Add, button" in this example.</p>
+  <p aria-hidden id="button-label" style={{ display: 'none', visibility: 'hidden'}}>Add</p>
+  <Button
+    ariaLabelledBy="button-label"
+    icon={<SwingsetTestIcon name="plus" />}
+    size="medium"
+  />
+  <br />
+  <p>With <code>ariaDescribedBy</code>, a screen reader should say "Next, button" in this example.</p>
+  <p aria-hidden id="button-description" style={{ display: 'none', visibility: 'hidden'}}>Next</p>
+  <Button
+    ariaDescribedBy="button-description"
+    icon={<SwingsetTestIcon name="arrow-right" size={24} />}
+    size="large"
+  />
+  <br />
+</>
+`}</LiveComponent>
+
+## Full width
+
+<LiveComponent>{`
+<>
+  <Button
+    isFullWidth
+    size="small"
+    text="Small"
+  />
+  <br />
+  <Button
+    isFullWidth
+    size="medium"
+    text="Medium"
+  />
+  <br />
+  <Button
+    isFullWidth
+    size="large"
+    text="Large"
+  />
+</>
+`}</LiveComponent>
+
+## Size
+
+<LiveComponent>{`
+<>
+  <Button
+    size="small"
+    text="Small"
+  />
+  <br />
+  <Button
+    size="medium"
+    text="Medium"
+  />
+  <br />
+  <Button
+    size="large"
+    text="Large"
+  />
+</>
+`}</LiveComponent>

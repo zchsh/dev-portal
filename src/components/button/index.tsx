@@ -2,7 +2,10 @@ import { ButtonProps } from './types'
 import s from './button.module.css'
 import classNames from 'classnames'
 
-const Button = ({
+// TODO: get Storybook props table to work without named export
+// For some reason "export" is needed here for Storybook props table to
+// work as expected. Not sure how to workaround.
+export const Button = ({
   ariaDescribedBy,
   ariaLabel,
   ariaLabelledBy,
