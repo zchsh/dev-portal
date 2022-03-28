@@ -1,19 +1,15 @@
 import React from 'react'
 // import Docs from './button-custom-docs.mdx'
-import Docs from '../../components/button/docs.mdx'
-import { Button, ButtonProps } from '../../components/button'
+import Docs from 'components/button/docs.mdx'
+import { Button, ButtonProps } from 'components/button'
 import { ComponentMeta } from '@storybook/react'
-// import SwingsetTestIcon from '../../__swingset-components/swingset-test-icon'
-// import ExamplesContainer from '../../__swingset-components/examples-container'
+// import SwingsetTestIcon from '__swingset-components/swingset-test-icon'
+// import ExamplesContainer from '__swingset-components/examples-container'
 
 export default {
   title: 'Components/Button',
   component: Button,
-  parameters: {
-    docs: {
-      page: Docs,
-    },
-  },
+  parameters: { docs: { page: Docs } },
 } as ComponentMeta<typeof Button>
 
 export const Playground = (args: ButtonProps) => <Button {...args} />
