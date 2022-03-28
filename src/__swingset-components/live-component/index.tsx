@@ -3,6 +3,7 @@ import s from './style.module.css'
 import { useState } from 'react'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import SwingsetTestIcon from '../swingset-test-icon'
+import Button from '../../components/button'
 import theme from './editor-theme'
 
 function LiveComponent({ children, components, collapsed = false }) {
@@ -13,7 +14,7 @@ function LiveComponent({ children, components, collapsed = false }) {
     <div className={s.liveComponent}>
       <LiveProvider
         code={code}
-        scope={Object.assign({ SwingsetTestIcon }, components)}
+        scope={Object.assign({ SwingsetTestIcon, Button }, components)}
         theme={theme as $TSFixMe}
         transformCode={(code) => {
           setCode(code)

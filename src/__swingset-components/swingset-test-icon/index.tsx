@@ -29,7 +29,7 @@ const ICON_MAP = {
 
 interface SwingsetTestIconProps {
   name: 'arrow-right' | 'github' | 'plus'
-  size: 16 | 24
+  size?: 16 | 24
 }
 
 /**
