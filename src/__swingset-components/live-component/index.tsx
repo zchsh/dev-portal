@@ -2,9 +2,20 @@ import sg from './shared.module.css'
 import s from './style.module.css'
 import { useState } from 'react'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
-import SwingsetTestIcon from '../swingset-test-icon'
-import Button from '../../components/button'
+import SwingsetTestIcon from '__swingset-components/swingset-test-icon'
 import theme from './editor-theme'
+// Components
+import BreadcrumbBar from 'components/breadcrumb-bar'
+import Button from 'components/button'
+import Card from 'components/card'
+import CardLink from 'components/card-link'
+
+const allComponents = {
+  BreadcrumbBar,
+  Button,
+  Card,
+  CardLink,
+}
 
 function LiveComponent({ children, components, collapsed = false }) {
   const [code, setCode] = useState(children)
@@ -14,7 +25,7 @@ function LiveComponent({ children, components, collapsed = false }) {
     <div className={s.liveComponent}>
       <LiveProvider
         code={code}
-        scope={Object.assign({ SwingsetTestIcon, Button }, components)}
+        scope={Object.assign({ SwingsetTestIcon }, allComponents, components)}
         theme={theme as $TSFixMe}
         transformCode={(code) => {
           setCode(code)
