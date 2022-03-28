@@ -1,12 +1,11 @@
 import React from 'react'
-import SwingsetTestIcon from '../../../__swingset-components/swingset-test-icon'
-// import Docs from './custom-docs.mdx'
-import Docs from '../../../components/button/docs.mdx'
-import { Button, ButtonProps } from '../../../components/button'
+import SwingsetTestIcon from '../../__swingset-components/swingset-test-icon'
+// import Docs from './button-custom-docs.mdx'
+import Docs from '../../components/button/docs.mdx'
+import { Button, ButtonProps } from '../../components/button'
 import { ComponentMeta } from '@storybook/react'
-import ExamplesContainer from '../../../__swingset-components/examples-container'
+import ExamplesContainer from '../../__swingset-components/examples-container'
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Components/Button',
   component: Button,
@@ -16,9 +15,6 @@ export default {
     },
   },
 } as ComponentMeta<typeof Button>
-
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-// const Template: ComponentStory<typeof Button> =
 
 export const Playground = (args: ButtonProps) => <Button {...args} />
 Playground.args = { text: 'My button', color: 'primary' }

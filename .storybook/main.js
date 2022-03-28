@@ -14,4 +14,8 @@ module.exports = {
   core: {
     builder: 'webpack5',
   },
+  webpackFinal: (config) => {
+    config.resolve.modules = [...(config.resolve.modules || []), './src']
+    return config
+  },
 }
