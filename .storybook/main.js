@@ -14,6 +14,9 @@ module.exports = {
   core: {
     builder: 'webpack5',
   },
+  // Note: resolve stuff below is duplicative of baseUrl in tsconfig.
+  // It's necessary due to a bug in Storybook
+  // ref: https://github.com/storybookjs/storybook/issues/16461
   webpackFinal: (config) => {
     config.resolve.modules = [...(config.resolve.modules || []), './src']
     return config
