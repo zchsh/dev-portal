@@ -36,7 +36,7 @@ The `Button` component should be used when [an HTML `<button>` element](https://
 
 ## Icon and text
 
-<LiveComponent>{`
+<LiveComponent components={{ Button }}>{`
 <>
   <Button
     icon={<SwingsetTestIcon name="plus" />}
@@ -95,7 +95,7 @@ If the `icon` prop is provided and no prop `text` is provided, the component wil
   - "Add to cart"
   - "Undo changes"
 
-<LiveComponent>{`
+<LiveComponent components={{ Button }}>{`
 <>
   <p>With <code>ariaLabel</code>, a screen reader should say "Copy, button" in this example.</p>
   <Button
@@ -125,7 +125,7 @@ If the `icon` prop is provided and no prop `text` is provided, the component wil
 
 ## Full width
 
-<LiveComponent>{`
+<LiveComponent components={{ Button }}>{`
 <>
   <Button
     isFullWidth
@@ -149,7 +149,7 @@ If the `icon` prop is provided and no prop `text` is provided, the component wil
 
 ## Size
 
-<LiveComponent>{`
+<LiveComponent components={{ Button }}>{`
 <>
   <Button
     size="small"

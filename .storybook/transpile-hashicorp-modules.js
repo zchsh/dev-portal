@@ -1,0 +1,31 @@
+const defaultRuleRegex = /\.(mjs|tsx?|jsx?)$/
+
+const transpileList = ['@hashicorp/flight-icons']
+
+module.exports = {
+  webpackFinal(config = {}, options = {}) {
+    const defaultRule = config.module.rules.find(
+      (rule) => rule.test.toString() === defaultRuleRegex.toString()
+    )
+
+    return {
+      ...config,
+      module: {
+        ...config.module,
+        rules: [
+          ...config.module.rules.filter(
+            (rule) => rule.test.toString() !== defaultRuleRegex
+          ),
+          {
+            // Transpile HashiCorp modules by
+            // overriding default simple exclusion of node_modules
+            ...defaultRule,
+            exclude: new RegExp(
+              `node_modules${transpileList.map((p) => `(?!/${p})`).join('')}`
+            ),
+          },
+        ],
+      },
+    }
+  },
+}
