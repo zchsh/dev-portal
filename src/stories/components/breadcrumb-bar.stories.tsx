@@ -1,12 +1,21 @@
 import React from 'react'
+import { ComponentMeta } from '@storybook/react'
+import createLiveComponent from '__swingset-components/live-component'
 import Docs from 'components/breadcrumb-bar/docs.mdx'
 import BreadcrumbBar from 'components/breadcrumb-bar'
-import { ComponentMeta } from '@storybook/react'
 
 export default {
   title: 'Components/BreadcrumbBar',
   component: BreadcrumbBar,
-  parameters: { docs: { page: Docs } },
+  parameters: {
+    docs: {
+      components: {
+        BreadcrumbBar,
+        LiveComponent: createLiveComponent({ BreadcrumbBar }),
+      },
+      page: Docs,
+    },
+  },
 } as ComponentMeta<typeof BreadcrumbBar>
 
 export const Playground = (args) => <BreadcrumbBar {...args} />

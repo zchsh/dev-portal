@@ -1,12 +1,21 @@
 import React from 'react'
+import { ComponentMeta } from '@storybook/react'
+import createLiveComponent from '__swingset-components/live-component'
 import Docs from 'components/card-link/docs.mdx'
 import CardLink from 'components/card-link'
-import { ComponentMeta } from '@storybook/react'
 
 export default {
   title: 'Components/CardLink',
   component: CardLink,
-  parameters: { docs: { page: Docs } },
+  parameters: {
+    docs: {
+      components: {
+        CardLink,
+        LiveComponent: createLiveComponent({ CardLink }),
+      },
+      page: Docs,
+    },
+  },
 } as ComponentMeta<typeof CardLink>
 
 export const Playground = (args) => <CardLink {...args} />
