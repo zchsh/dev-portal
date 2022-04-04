@@ -1,0 +1,47 @@
+.root {
+  background: rgba(255, 0, 0, 0.3);
+}
+
+.heading {
+  background: rgba(255, 0, 0, 0.3);
+  margin: 0;
+  padding: 0;
+  font-weight: var(--token-typography-font-weight-semibold);
+  font-family: var(--token-typography-display-200-font-family);
+  font-size: var(--token-typography-display-200-font-size);
+  line-height: var(--token-typography-display-200-line-height);
+  letter-spacing: var(--token-typography-display-200-letter-spacing);
+}
+
+.listRoot {
+  /* TODO: will these go to 3 columns on wide viewports?
+     if so, @media query to change --min-column-width on wide viewports
+     could be a nice flexible solution. */
+  --min-column-width: 240px;
+
+  align-items: stretch;
+  background: rgba(0, 255, 0, 0.3);
+  display: grid;
+  grid-gap: 24px;
+
+  /**
+  * Automatically use more columns, as long as columns are >= min-column-width.
+  * Note: minimum size may be < min-column-width, if 100% < min-column-width.
+  * This ensures that on small viewports, content will never overflow.
+  */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, var(--min-column-width)), 1fr)
+  );
+  list-style: none;
+  padding: 16px 0 0 0;
+  margin: 0;
+}
+
+.listItem {
+  background: rgba(0, 0, 255, 0.3);
+}
+
+.listItemCard {
+  height: 100%;
+}
