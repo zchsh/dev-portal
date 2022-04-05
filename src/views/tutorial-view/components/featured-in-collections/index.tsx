@@ -24,7 +24,7 @@ export function FeaturedInCollections({
           const { id, slug, numTutorials, name, description, theme } =
             collection
           return (
-            <li key={id}>
+            <li key={id} className={s.listItem}>
               <CollectionCard
                 // Note: className here necessary because CardLink
                 // doesn't automatically behave as expected in grid layouts...
