@@ -7,6 +7,7 @@ import s from './collection-card.module.css'
 /**
  * TODO: styles and functionality dependent on design spec being finalized.
  * (currently "WIP" in Figma)
+ * Figma: https://www.figma.com/file/VD7ahvXuXWJApeGnhbW4hv/Dev-Portal?node-id=6860%3A79233
  */
 function CollectionCard({
   className,

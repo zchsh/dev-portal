@@ -9,18 +9,28 @@
 }
 
 .listRoot {
+  align-items: stretch;
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
   list-style: none;
-  margin: 0;
-  padding: 16px 0 0 0;
+
+  /**
+   * Note: !important is necessary here as we're within a content container
+   * that uses nested generic selectors to style <ul />.
+   * TODO: convert the nested generic selectors to MDX components.
+   * Asana task:
+   * https://app.asana.com/0/1201987349274776/1201653123138729/f
+   */
+  margin: 0 !important;
+  padding: 16px 0 0 0 !important;
 }
 
 .listItem {
   flex-grow: 1;
   min-width: 240px;
   width: 0;
+  margin-bottom: 0 !important;
 }
 
 .listItemCard {

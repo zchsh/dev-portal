@@ -1,15 +1,11 @@
-import CollectionCard, {
-  CollectionCardProps,
-} from 'views/tutorial-view/components/collection-card'
+import CollectionCard from 'views/tutorial-view/components/collection-card'
+import { FeaturedInCollectionsProps } from './types'
 import s from './featured-in-collections.module.css'
-
-interface FeaturedInCollectionsProps {
-  collections: CollectionCardProps[]
-}
 
 // This should render the eventual `CollectionCard` component (doesn't exist yet)
 // which will be used on many other views
 export function FeaturedInCollections({
+  className,
   collections,
 }: FeaturedInCollectionsProps): React.ReactElement {
   if (collections.length === 0) {
@@ -17,7 +13,7 @@ export function FeaturedInCollections({
   }
 
   return (
-    <>
+    <div className={className}>
       <h2 className={s.heading}>This tutorial also appears in:</h2>
       <ul className={s.listRoot}>
         {collections.map((collection) => {
@@ -40,7 +36,7 @@ export function FeaturedInCollections({
           )
         })}
       </ul>
-    </>
+    </div>
   )
 }
 
