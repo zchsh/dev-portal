@@ -1,9 +1,4 @@
-.root {
-  background: rgba(255, 0, 0, 0.3);
-}
-
 .heading {
-  background: rgba(255, 0, 0, 0.3);
   margin: 0;
   padding: 0;
   font-weight: var(--token-typography-font-weight-semibold);
@@ -14,13 +9,9 @@
 }
 
 .listRoot {
-  /* TODO: will these go to 3 columns on wide viewports?
-     if so, @media query to change --min-column-width on wide viewports
-     could be a nice flexible solution. */
   --min-column-width: 240px;
 
   align-items: stretch;
-  background: rgba(0, 255, 0, 0.3);
   display: grid;
   grid-gap: 24px;
 
@@ -36,10 +27,6 @@
   list-style: none;
   padding: 16px 0 0 0;
   margin: 0;
-}
-
-.listItem {
-  background: rgba(0, 0, 255, 0.3);
 }
 
 .listItemCard {

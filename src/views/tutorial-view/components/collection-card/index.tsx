@@ -4,6 +4,10 @@ import classNames from 'classnames'
 import { CollectionCardProps } from './types'
 import s from './collection-card.module.css'
 
+/**
+ * TODO: styles and functionality dependent on design spec being finalized.
+ * (currently "WIP" in Figma)
+ */
 function CollectionCard({
   className,
   slug,

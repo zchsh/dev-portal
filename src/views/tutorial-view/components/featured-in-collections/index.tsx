@@ -17,14 +17,14 @@ export function FeaturedInCollections({
   }
 
   return (
-    <div className={s.root}>
+    <>
       <h2 className={s.heading}>This tutorial also appears in:</h2>
       <ul className={s.listRoot}>
         {collections.map((collection) => {
           const { id, slug, numTutorials, name, description, theme } =
             collection
           return (
-            <li key={id} className={s.listItem}>
+            <li key={id}>
               <CollectionCard
                 // Note: className here necessary because CardLink
                 // doesn't automatically behave as expected in grid layouts...
@@ -40,7 +40,7 @@ export function FeaturedInCollections({
           )
         })}
       </ul>
-    </div>
+    </>
   )
 }
 
