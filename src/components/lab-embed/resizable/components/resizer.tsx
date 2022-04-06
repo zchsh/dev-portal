@@ -1,8 +1,8 @@
 import { MouseEventHandler } from 'react'
 import CSS from 'csstype'
 import { IconX24 } from '@hashicorp/flight-icons/svg-react/x-24'
-import InlineSvg from '@hashicorp/react-inline-svg'
-import ResizeBar from './img/resize_bar.svg?include'
+// import InlineSvg from '@hashicorp/react-inline-svg'
+// import ResizeBar from './img/resize_bar.svg?include'
 import s from './resizer.module.css'
 
 interface ResizerProps {
@@ -27,7 +27,8 @@ export default function Resizer({
         onMouseDown={onMouseDown}
         onMouseUp={onMouseUp}
       >
-        <InlineSvg className={s.resizeBar} src={ResizeBar} />
+        <span>TODO: add back icon</span>
+        {/* <InlineSvg className={s.resizeBar} src={ResizeBar} /> */}
       </div>
       <button className={s.closeIcon} onClick={onClosePanel}>
         <IconX24 />

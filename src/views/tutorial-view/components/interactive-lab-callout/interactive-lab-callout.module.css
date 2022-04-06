@@ -1,0 +1,40 @@
+.interactiveCallout {
+  composes: hds-typography-body-200 from global;
+  font-weight: var(--token-typography-font-weight-semibold);
+  border-radius: 6px;
+  padding: 16px;
+  align-items: center;
+  background-color: var(--token-color-foreground-strong);
+  background-color: magenta;
+
+  @media (--medium-up) {
+    display: flex;
+    gap: 32px;
+  }
+}
+
+.title {
+  margin: 0 !important;
+  color: var(--token-color-surface-primary);
+}
+
+.description {
+  margin: 4px 0 0 0 !important;
+  color: var(--token-color-surface-faint);
+}
+
+.ctaButton {
+  margin: 12px 0 0 0 !important;
+}
+
+.image {
+  display: none;
+  width: 133px;
+  flex-shrink: 0;
+  margin-left: auto;
+
+  @media (--medium-up) {
+    position: relative;
+    display: block;
+  }
+}
