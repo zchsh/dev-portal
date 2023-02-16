@@ -1,0 +1,70 @@
+.root {
+	border: 3px solid magenta;
+}
+
+.devBorder {
+	border: 1px solid magenta;
+}
+
+.placeholder {
+	border: 1px solid magenta;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.9);
+}
+
+.demoTallContent {
+	display: flex;
+	min-height: 150vh;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.modifiedMainAreaWrapper {
+	display: flex;
+	justify-content: center;
+	min-height: calc(100vh - var(--navigation-header-height));
+	padding-left: var(--main-area-padding-left);
+	padding-right: var(--main-area-padding-right);
+	padding-top: var(--main-area-padding-top);
+	padding-bottom: 128px;
+
+	@media (--dev-dot-sidecar-up) {
+		/* TODO: confirm this with design. Looks like zero right padding in Figma,
+		   but that might look odd in browser if any content is exactly 100% width.
+			 Having zero right padding also results in scroll bar overlap.
+			 Even a smaller value, eg 16px or 20px, seems like it could work well. */
+		padding-right: 0;
+
+		/* padding-right: 16px; */
+	}
+}
+
+.modifiedSidecarWrapper {
+	border: 1px solid magenta;
+	display: none;
+
+	@media (--dev-dot-sidecar-up) {
+		display: block;
+		flex-shrink: 0;
+		height: calc(
+			100vh - var(--sticky-bars-height) - var(--main-area-padding-top)
+		);
+		margin-left: 48px;
+		overflow-y: auto;
+		position: sticky;
+		top: calc(var(--sticky-bars-height) + var(--main-area-padding-top));
+
+		/* width: var(--sidecar-width); */
+
+		/* TODO: confirm with design - is this width for all viewport sizes?
+		   Should we change the breakpoint at which we introduce the sidecar? */
+		width: 312px;
+	}
+
+	@media (min-width: 1440px) {
+		margin-left: 64px;
+	}
+}

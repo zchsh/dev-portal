@@ -1,0 +1,15 @@
+.root {
+	border: 3px solid magenta;
+}
+
+.devBorder {
+	border: 1px solid magenta;
+}
+
+.placeholder {
+	border: 1px solid magenta;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.9);
+}
