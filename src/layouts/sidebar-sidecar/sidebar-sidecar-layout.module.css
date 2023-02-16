@@ -61,11 +61,12 @@ for further details.
  */
 
 .mobileMenuContainer {
+	/* TODO: to remove the !important here, use media query in other spot */
 	@media (--dev-dot-hide-mobile-menu) {
 		display: flex !important; /* always want this value on desktop here */
 		left: 0 !important; /* always want this value on desktop here */
-		position: sticky; /* fixed does not take up horiz. space the same */
-		width: var(--dev-dot-sidebar-width); /* custom width overwrite */
+		position: sticky !important; /* fixed does not take up horiz. space the same */
+		width: var(--dev-dot-sidebar-width) !important; /* custom width overwrite */
 	}
 }
 
