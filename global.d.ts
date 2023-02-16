@@ -35,3 +35,10 @@ type ValueOf<T> = T[keyof T]
  * Generated files
  */
 declare module '.generated/opt-in-redirect-checks'
+/**
+ * Handle .mdx imports, used in stories for custom docs pages
+ */
+declare module '*.mdx' {
+	let MDXComponent: (props) => JSX.Element
+	export default MDXComponent
+}

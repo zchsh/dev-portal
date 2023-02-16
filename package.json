@@ -34,7 +34,9 @@
 		"test:watch": "jest --watch",
 		"test": "jest",
 		"test:ci": "jest --runInBand",
-		"typecheck": "tsc -p ."
+		"typecheck": "tsc -p .",
+		"storybook": "start-storybook -p 6006",
+		"build-storybook": "build-storybook"
 	},
 	"simple-git-hooks": {
 		"pre-commit": "npx next-hashicorp precommit && npm run typecheck"
@@ -51,6 +53,8 @@
 	},
 	"devDependencies": {
 		"@axe-core/react": "^4.3.1",
+		"@babel/core": "^7.20.12",
+		"@babel/plugin-transform-react-jsx": "^7.20.13",
 		"@datadog/datadog-api-client": "^1.0.0-beta.7",
 		"@hashicorp/platform-cli": "^2.4.0",
 		"@hashicorp/platform-configs": "^0.2.0",
@@ -60,6 +64,15 @@
 		"@hashicorp/platform-types": "^0.3.0",
 		"@octokit/rest": "^19.0.5",
 		"@playwright/test": "^1.28.0",
+		"@storybook/addon-actions": "^6.5.16",
+		"@storybook/addon-docs": "^6.5.16",
+		"@storybook/addon-essentials": "^6.5.16",
+		"@storybook/addon-interactions": "^6.5.16",
+		"@storybook/addon-links": "^6.5.16",
+		"@storybook/builder-webpack5": "^6.5.16",
+		"@storybook/manager-webpack5": "^6.5.16",
+		"@storybook/react": "^6.5.16",
+		"@storybook/testing-library": "^0.0.13",
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^13.3.0",
 		"@testing-library/user-event": "^14.4.3",
@@ -73,8 +86,10 @@
 		"@types/shortid": "^0.0.29",
 		"axe-core": "^4.4.1",
 		"babel-jest": "^27.4.6",
+		"babel-loader": "^9.1.2",
 		"cross-env": "^7.0.3",
 		"flat": "^5.0.2",
+		"hast-util-to-parse5": "^7.1.0",
 		"identity-obj-proxy": "^3.0.0",
 		"jest": "^27.5.1",
 		"jest-raw-loader": "^1.0.1",
@@ -85,11 +100,15 @@
 		"postcss-flexbugs-fixes": "^5.0.2",
 		"postcss-normalize": "^10.0.1",
 		"postcss-preset-env": "^6.7.0",
+		"react-live": "^3.1.1",
 		"react-test-renderer": "^18.2.0",
+		"resolve-url-loader": "^5.0.0",
 		"rimraf": "^3.0.2",
 		"simple-git-hooks": "^2.7.0",
+		"storybook-addon-next": "^1.7.1",
 		"stylelint": "^13.8.0",
 		"typescript": "^4.5.5",
+		"webpack": "^5.75.0",
 		"yargs": "^17.6.2"
 	},
 	"dependencies": {
