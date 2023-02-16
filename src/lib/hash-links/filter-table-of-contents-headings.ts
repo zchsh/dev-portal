@@ -1,4 +1,4 @@
-import { TableOfContentsHeading } from '../components/table-of-contents'
+import { RemarkAnchorLinksHeading } from './types'
 
 /**
  * Filter headings for display in table of contents.
@@ -13,11 +13,17 @@ import { TableOfContentsHeading } from '../components/table-of-contents'
  * the `tabbedSectionDepth` logic here:
  * https://github.com/hashicorp/remark-plugins/blob/0f2d21516ab3c7120a24456838d83390e3ab179d/plugins/anchor-links/index.js#L29
  *
+ * TODO: given the above dependency on anchor-links remark plugin,
+ * this utility might make sense to move closer to the server-side code where
+ * the anchor-links plugin is invoked. Seems more efficient to implement this
+ * type of logic server-side, rather than on every re-render of the
+ * <TableOfContents /> component.
+ *
  */
 export function filterTableOfContentsHeadings(
-	headings: TableOfContentsHeading[]
-): TableOfContentsHeading[] {
-	return headings.filter((heading: TableOfContentsHeading) => {
+	headings: RemarkAnchorLinksHeading[]
+): RemarkAnchorLinksHeading[] {
+	return headings.filter((heading: RemarkAnchorLinksHeading) => {
 		const { level, tabbedSectionDepth } = heading
 
 		/**

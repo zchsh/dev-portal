@@ -1,8 +1,8 @@
 import { ReactElement, useMemo } from 'react'
 import classNames from 'classnames'
 import { useDeviceSize } from 'contexts'
+import { useActiveSection } from 'lib/hash-links/use-active-section'
 import { TableOfContentsHeading, TableOfContentsProps } from './types'
-import { useActiveSection } from './use-active-section'
 import s from './table-of-contents.module.css'
 
 const TABLE_OF_CONTENTS_LABEL_ID = 'table-of-contents-label'
@@ -16,7 +16,8 @@ const TableOfContents = ({ headings }: TableOfContentsProps): ReactElement => {
 	 * @TODO (2022-5-17) update the second argument to useActiveSection. Sidecar
 	 * now goes away at 1280px rather than the isDesktop width.
 	 */
-	const activeSection = useActiveSection(headings, enableActiveSection)
+	const headingSlugs = headings.map((h) => h.slug)
+	const activeSection = useActiveSection(headingSlugs, enableActiveSection)
 
 	// Don't render if only one item
 	if (hasOneOrLessHeadings) {

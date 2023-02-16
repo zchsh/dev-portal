@@ -32,7 +32,7 @@ import {
 	useSidebarNavData,
 } from './contexts/sidebar-nav-data'
 import { ScrollProgressBar } from './components/scroll-progress-bar'
-import { filterTableOfContentsHeadings } from './utils/filter-table-of-contents-headings'
+import { filterTableOfContentsHeadings } from 'lib/hash-links/filter-table-of-contents-headings'
 import s from './sidebar-sidecar-layout.module.css'
 
 const SidebarSidecarLayout = (props: SidebarSidecarLayoutProps) => {
