@@ -1,3 +1,6 @@
-.root {
-	border: 1px solid magenta;
+.onThisPage {
+	composes: hds-typography-body-100 from global;
+	font-weight: var(--token-typography-font-weight-semibold);
+	color: var(--token-color-foreground-primary);
+	padding-bottom: 8px;
 }
