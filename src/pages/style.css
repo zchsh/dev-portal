@@ -14,7 +14,7 @@
 @import 'styles/hds-typography-display-600.css';
 
 /* Sizing styles, used in DevDot */
-@import 'styles/sizing.css';
+@import '../styles/sizing.css';
 
 /* Product color styles */
 @import 'styles/products.css';
