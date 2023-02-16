@@ -147,6 +147,7 @@ export async function getStaticProps({ params }) {
 		props: {
 			apiPageProps,
 			layoutProps: {
+				/** TODO: remove headings here, it's empty, not actually used. */
 				headings,
 				breadcrumbLinks,
 				sidebarNavDataLevels,
