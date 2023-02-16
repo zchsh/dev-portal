@@ -9,7 +9,7 @@ import useCurrentPath from 'hooks/use-current-path'
 import { useMobileMenu } from 'contexts'
 import InstruqtProvider from 'contexts/instruqt-lab'
 import { TutorialLite } from 'lib/learn-client/types'
-import SidebarSidecarLayout from 'layouts/sidebar-sidecar'
+import SidebarSidecarWithToc from 'layouts/sidebar-sidecar/components/sidebar-sidecar-with-toc'
 import {
 	CollectionCategorySidebarSection,
 	getCollectionSlug,
@@ -229,7 +229,7 @@ function TutorialView({
 				key={slug}
 				{...(isInteractive && { labId: handsOnLab.id })}
 			>
-				<SidebarSidecarLayout
+				<SidebarSidecarWithToc
 					breadcrumbLinks={layoutProps.breadcrumbLinks}
 					/**
 					 * @TODO remove casting to `any`. Will require refactoring both
@@ -280,7 +280,7 @@ function TutorialView({
 							collections={featuredInWithoutCurrent}
 						/>
 					</LayoutContentWrapper>
-				</SidebarSidecarLayout>
+				</SidebarSidecarWithToc>
 			</InteractiveLabWrapper>
 		</>
 	)

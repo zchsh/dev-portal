@@ -4,9 +4,6 @@ import path from 'path'
 import { ProductData } from 'types/products'
 import { stripUndefinedProperties } from 'lib/strip-undefined-props'
 import { validateAgainstSchema } from 'lib/validate-against-schema'
-import { TableOfContentsHeading } from 'layouts/sidebar-sidecar/components/table-of-contents'
-import { BreadcrumbLink } from 'components/breadcrumb-bar'
-import { SidebarProps } from 'components/sidebar'
 import {
 	generateProductLandingSidebarNavData,
 	generateTopLevelSidebarNavData,
@@ -14,16 +11,13 @@ import {
 import { ProductLandingContent, ProductLandingContentSchema } from './schema'
 import { transformRawContentToProp, extractHeadings } from './helpers'
 import { ProductLandingViewProps } from './types'
+import { SidebarSidecarWithTocProps } from 'layouts/sidebar-sidecar/components/sidebar-sidecar-with-toc'
 
 const generateGetStaticProps = (product: ProductData) => {
 	return async (): Promise<
 		GetStaticPropsResult<
 			ProductLandingViewProps & {
-				layoutProps: {
-					headings: TableOfContentsHeading[]
-					breadcrumbLinks: BreadcrumbLink[]
-					sidebarNavDataLevels: SidebarProps[]
-				}
+				layoutProps: Omit<SidebarSidecarWithTocProps, 'children'>
 				product: ProductData
 			}
 		>

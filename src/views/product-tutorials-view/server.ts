@@ -1,5 +1,5 @@
 import { LearnProductData, LearnProductName } from 'types/products'
-import { SidebarSidecarLayoutProps } from 'layouts/sidebar-sidecar'
+import { SidebarSidecarWithTocProps } from 'layouts/sidebar-sidecar/components/sidebar-sidecar-with-toc'
 import {
 	getAllCollections,
 	getCollectionsBySection,
@@ -31,8 +31,8 @@ export interface ProductTutorialsViewProps {
 }
 
 interface ProductTutorialsLayout {
-	breadcrumbLinks: SidebarSidecarLayoutProps['breadcrumbLinks']
-	headings: SidebarSidecarLayoutProps['headings']
+	breadcrumbLinks: SidebarSidecarWithTocProps['breadcrumbLinks']
+	headings: SidebarSidecarWithTocProps['headings']
 	sidebarSections: CollectionCategorySidebarSection[]
 }
 
@@ -124,7 +124,7 @@ export async function getProductTutorialsViewProps(
 	)
 
 	/**
-	 * Build & return layout props to pass to SidebarSidecarLayout
+	 * Build & return layout props to pass to SidebarSidecarWithToc
 	 */
 	const layoutProps: ProductTutorialsLayout = {
 		headings,

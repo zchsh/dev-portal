@@ -1,4 +1,4 @@
-import SidebarSidecarLayout from 'layouts/sidebar-sidecar'
+import SidebarSidecarWithToc from 'layouts/sidebar-sidecar/components/sidebar-sidecar-with-toc'
 import Heading from 'components/heading'
 import {
 	generateProductLandingSidebarNavData,
@@ -62,7 +62,7 @@ function ProductTutorialsView({
 	}
 
 	return (
-		<SidebarSidecarLayout
+		<SidebarSidecarWithToc
 			breadcrumbLinks={layoutProps.breadcrumbLinks}
 			headings={layoutProps.headings}
 			AlternateSidebar={TutorialsSidebar}
@@ -85,7 +85,7 @@ function ProductTutorialsView({
 					/>
 				</div>
 			) : null}
-		</SidebarSidecarLayout>
+		</SidebarSidecarWithToc>
 	)
 }
 
